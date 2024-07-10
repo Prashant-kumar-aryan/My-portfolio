@@ -1,0 +1,195 @@
+.education{
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+}
+.edu-heading{
+    display: flex;
+    align-items:center;
+    flex-direction: column;
+    flex: 1;
+    margin-top: 2%;
+}
+.left-education>div >h1{
+    color:whitesmoke;
+    letter-spacing: 2px;
+    font-size: 3.2em;
+}
+.left-education >div>h2{
+    color: whitesmoke;
+    letter-spacing: 2px;
+    font-size: 2em;
+}
+
+.left-education{
+    flex: 1;
+
+}
+.edu-card {
+    margin: 20px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in;
+    width: 80%;
+    margin-left:10%
+}
+.edu-card:hover {
+    transform:scale(1.01);
+}
+
+.edu-card h2 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #333;
+    /* Dark text for readability */
+}
+
+.edu-card h3 {
+    margin: 10px 0;
+    font-size: 20px;
+    color: #666;
+    /* Slightly lighter text for distinction */
+}
+
+.edu-card p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+    margin: 10px 0 0;
+}
+.right-education >img{
+    height: 70vh;
+}
+
+.right-education {
+    transition:  filter 0.5s ease-in;
+    transition:  transform 0.1s ease-in;
+    /* Smooth transition for the filter effect */
+}
+
+.right-education:hover {
+    transform: scaleY(1.01);
+    filter: brightness(150%);
+
+    /* Applies brightness filter to .right-education on hover */
+}
+
+.cer-heading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    filter: brightness(200%);
+}
+.cer-heading >h1{
+
+    color: white;
+    font-family:cursive;
+    font-size: 2.4em;
+    filter: brightness(200%);
+}.Certificate {
+    padding: 20px;
+}
+
+.cer-heading {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.cer-heading h1 {
+    font-size: 2em;
+    color: #333;
+}
+
+.Certificate-card {
+    margin-bottom: 15px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in;
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.Certificate-card a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    
+}
+
+.Certificate-card:hover {
+    background-color: #f0f0f0;
+    transform:scale(1.01);
+}
+
+.Certificate-card img {
+    width: 100px;
+    height: auto;
+    margin-right: 15px;
+    border-radius: 5px;
+}
+
+.Certificate-card h2 {
+    font-size: 1.2em;
+    color: #555;
+}
+@media (max-width: 768px) {
+    .education {
+        flex-direction: column;
+        /* Stack items vertically */
+        align-items: center;
+        /* Center align items */
+    }
+
+    .edu-heading {
+        margin-top: 10px;
+        /* Adjust spacing */
+    }
+
+    .left-education {
+        width: 100%;
+        /* Take up full width */
+        margin-left: 0;
+        /* Remove left margin */
+    }
+
+    .edu-card {
+        width: 90%;
+        /* Adjust width for smaller screens */
+        margin-left: 2.5%;
+        /* Center align horizontally */
+    }
+
+    .right-education>img {
+        height:36vh;
+        /* Ensure image scales appropriately */
+    }
+
+    .Certificate {
+        padding: 10px;
+        /* Adjust padding */
+    }
+
+    .Certificate-card {
+        width: 90%;
+        /* Adjust width for smaller screens */
+        margin-left: 5%;
+        /* Center align horizontally */
+        margin-right: 5%;
+
+    }
+    .left-education>div>h1{
+        font-size: 2rem;
+    }
+    .left-education>div>h2{
+        margin-left: 5%;
+        font-size: 1rem;
+    }
+}
