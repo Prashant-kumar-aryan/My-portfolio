@@ -2,7 +2,6 @@ import React from "react";
 
 const Footer = () => {
   const footerStyle = {
-    backgroundColor: "#f0f0f0",
     padding: " 10px",
     textAlign: "center",
     left: 0,
@@ -17,7 +16,7 @@ const Footer = () => {
 
   return (
     <div style={footerStyle}>
-      <p style={textStyle}>Made by Prashant</p>
+      <p style={textStyle}>Made by Prashant@copyright</p>
     </div>
   );
 };

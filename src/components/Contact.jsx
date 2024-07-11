@@ -23,6 +23,40 @@ const Contact = () => {
         </div>
         <div className="contact-title">
           <h1>Contact Me</h1>
+
+          <h2 style={{ color: "white" }}>
+            I am always up for a good conversation.
+          </h2>
+          <h2 style={{ color: "white" }}>
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=prashantkr2698@gmail.com"
+              target="_blank"
+              className="fa fa-google"
+              style={{
+                marginTop: "20px",
+                color: "white",
+                borderRadius: "50%",
+                border: "1px solid white",
+                padding: "5px",
+              }}
+            ></a>
+            <span style={{ marginLeft: "10px" }}>prashantkr2698@gmail.com</span>
+          </h2>
+          <h2 style={{ color: "white" }}>
+            <a
+              href="https://api.whatsapp.com/send/?phone=7250412245&text&type=phone_number&app_absent=0"
+              target="_blank"
+              className="fa fa-whatsapp"
+              style={{
+                marginTop: "20px",
+                color: "white",
+                borderRadius: "50%",
+                border: "1px solid white",
+                padding: "5px",
+              }}
+            ></a>
+            <span style={{ marginLeft: "10px" }}>7250412245</span>
+          </h2>
         </div>
       </section>
 

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
 import "../assets/styles/ContactForm.css"; // Import your CSS file
-
+import toast, { Toaster } from "react-hot-toast";
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -16,7 +16,7 @@ const ContactForm = () => {
       [id]: value,
     }));
   };
-
+  // Access environment variables directly in your component
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle form submission logic here
@@ -28,14 +28,21 @@ const ContactForm = () => {
     };
 
     emailjs
-      .send("service_9fsl0h8", "template_j575jx5", templateParams, {
-        publicKey: "5z0lNZnJfdFvWsX6C",
-      })
+      .send(
+        import.meta.env.VITE_SOME_KEY,
+        import.meta.env.VITE_SOME_KEY_TWO,
+        templateParams,
+        {
+          publicKey: import.meta.env.VITE_SOME_KEY_THREE,
+        }
+      )
       .then(
         (response) => {
+          toast.success("Message Sent");
           console.log("SUCCESS!", response.status, response.text);
         },
         (error) => {
+          toast.error(error.text);
           console.log("FAILED...", error);
         }
       );
@@ -51,54 +58,57 @@ const ContactForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="title">
-        <h2>CONTACT</h2>
-      </div>
-      <div className="half">
-        <div className="item">
-          <label htmlFor="name">NAME</label>
-          <input
-            type="text"
-            id="name"
-            value={formData.name}
+    <>
+      <Toaster />
+      <form onSubmit={handleSubmit}>
+        <div className="title">
+          <h2>CONTACT</h2>
+        </div>
+        <div className="half">
+          <div className="item">
+            <label htmlFor="name">NAME</label>
+            <input
+              type="text"
+              id="name"
+              value={formData.name}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="item">
+            <label htmlFor="email">EMAIL</label>
+            <input
+              type="text"
+              id="email"
+              value={formData.email}
+              onChange={handleChange}
+            />
+          </div>
+        </div>
+        <div className="full">
+          <label htmlFor="message">MESSAGE</label>
+          <textarea
+            id="message"
+            value={formData.message}
             onChange={handleChange}
           />
         </div>
-        <div className="item">
-          <label htmlFor="email">EMAIL</label>
-          <input
-            type="text"
-            id="email"
-            value={formData.email}
-            onChange={handleChange}
-          />
+        <div className="action">
+          <input type="submit" value="SEND MESSAGE" />
+          <input type="button" value="RESET" onClick={handleReset} />
         </div>
-      </div>
-      <div className="full">
-        <label htmlFor="message">MESSAGE</label>
-        <textarea
-          id="message"
-          value={formData.message}
-          onChange={handleChange}
-        />
-      </div>
-      <div className="action">
-        <input type="submit" value="SEND MESSAGE" />
-        <input type="button" value="RESET" onClick={handleReset} />
-      </div>
-      <div className="icons">
-        <a href="https://x.com/_prashant_aryan" className="fa fa-twitter"></a>
-        <a
-          href="https://www.linkedin.com/in/prashant-kumar-aryan-517b4a25a/"
-          className="fa fa-linkedin"
-        ></a>
-        <a
-          href="https://github.com/Prashant-kumar-aryan"
-          className="fa fa-github"
-        ></a>
-      </div>
-    </form>
+        <div className="icons">
+          <a href="https://x.com/_prashant_aryan" className="fa fa-twitter"></a>
+          <a
+            href="https://www.linkedin.com/in/prashant-kumar-aryan-517b4a25a/"
+            className="fa fa-linkedin"
+          ></a>
+          <a
+            href="https://github.com/Prashant-kumar-aryan"
+            className="fa fa-github"
+          ></a>
+        </div>
+      </form>
+    </>
   );
 };
 
